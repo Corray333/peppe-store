@@ -62,6 +62,7 @@ a{
   transition: all 0.3s;
   rotate: -5deg;
   animation: shake 10s infinite ease-in;
+  text-transform: uppercase;
 }
 a:hover{
   background-color: white;

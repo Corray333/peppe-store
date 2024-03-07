@@ -25,7 +25,7 @@ import axios from 'axios'
 
 const counter = ref(0)
 watch(counter, () => {
-    if(counter.value > 2){
+    if(counter.value > products.value.length-3){
         counter.value = 0
     }
     if(counter.value < 0){
@@ -35,7 +35,8 @@ watch(counter, () => {
 
 const products = ref([])
 onMounted(async () => {
-    const {data} = await axios.get('http://localhost:3001/products')
+    const {data} = await axios.get('http://localhost:3001/products/featured')
+    console.log(data)
     products.value = data
 })
 
@@ -88,6 +89,13 @@ onMounted(async () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s;
+}
+.controls_block>button:hover{
+    box-shadow: inset 0 0 7px rgba(0,0,0,0.5);
+}
+.controls_block>button:active{
+    box-shadow: inset 0 0 13px rgba(0,0,0,0.5);
 }
 
 

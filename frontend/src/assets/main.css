@@ -42,5 +42,6 @@ a{
 }
 .wrapper>*{
   width: 100%;
-  max-width: 1040px;
+  max-width: 1240px;
+  padding: 25px 0;
 }

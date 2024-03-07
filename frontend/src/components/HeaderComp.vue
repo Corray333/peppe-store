@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapper">
     <div class="header">
-      <img src="../assets/images/logo.png" alt="" class="logo">
+      <router-link to="/"><img src="../assets/images/logo.png" alt="" class="logo"></router-link>
       <NavBar/>
       <SearchCart/>
     </div>
@@ -24,12 +24,19 @@ import SearchCart from './SearchCart.vue';
 .header{
   padding: 10px 0;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
+}
+a{
+  transition: all 0.3s;
+  width: fit-content;
+}
+a:hover{
+  transform: scale(1.1);
 }
 
 </style>

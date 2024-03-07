@@ -1,0 +1,2 @@
+env: "dev" # dev / prod
+port: ":3001"

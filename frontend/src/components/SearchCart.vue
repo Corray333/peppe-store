@@ -1,7 +1,7 @@
 <template>
     <div class="search-cart">
         <div class="search-container">
-            <input ref="inputVar" type="text" class="search">
+            <input ref="inputVar" type="text" class="search" placeholder="Search...">
             <div class="button" @click="inputVar.classList.toggle('opened')"><SearchIcon/></div>
         </div>
         <router-link to="cart" class="button"><CartIcon/></router-link>
