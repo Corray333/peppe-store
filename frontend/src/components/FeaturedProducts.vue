@@ -38,6 +38,9 @@ onMounted(async () => {
     const {data} = await axios.get('http://localhost:3001/products/featured')
     console.log(data)
     products.value = data
+    setInterval(() => {
+        counter.value++
+    }, 5000)
 })
 
 </script>

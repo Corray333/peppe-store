@@ -3,9 +3,11 @@
     <section class="product">
       <img :src="`http://localhost:3000/images/products/${product[0].id +'-' + colorPick}.jpeg`" alt="">
       <div class="product-info">
-        <h1>{{product[0].name}}</h1>
+        <div class="product-header">
+            <h1>{{product[0].name}}</h1>
+            <h3>{{price/100}} &#8381;</h3>
+        </div>
         <p>{{product[0].description}}</p>
-        <p>{{price/100}} &#8381;</p>
         <div class="card_controls_sizes">
             <p>Select size</p>
             <div class="sizes">
@@ -100,6 +102,10 @@ watch(
   background-color: white;
   border-radius: 25px;
   padding: 25px;
+}
+.product-header{
+    display: flex;
+    justify-content: space-between;
 }
 .product>img{
   width: 100%;

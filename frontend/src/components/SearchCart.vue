@@ -4,14 +4,17 @@
             <input ref="inputVar" type="text" class="search" placeholder="Search...">
             <div class="button" @click="inputVar.classList.toggle('opened')"><SearchIcon/></div>
         </div>
-        <router-link to="cart" class="button"><CartIcon/></router-link>
+        <router-link to="cart" class="button"><CartIcon/><p>{{ store.state.cart.length }}</p></router-link>
     </div>
 </template>
 
 <script setup>
 import SearchIcon from './icons/SearchIcon.vue';
 import CartIcon from './icons/CartIcon.vue';
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
 
 const inputVar = ref(null)
 
@@ -58,6 +61,23 @@ input{
 .search-container>.button{
     position: absolute;
     right: 0;
+}
+
+a{
+    position: relative;
+}
+a>p{
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -5px;
+    left: -5px;
+    background-color: white;
+    border: 2px solid var(--accent-color);
+    border-radius: 50px;
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <section class="shop">
-      <SideBar/>
+      <SideBar @search="search" />
       <div class="product-list">
         <ProductCard v-for="(product, i) in products" :key="i" :product="product"/>
       </div>
@@ -23,6 +23,10 @@ onBeforeMount(async () => {
   products.value = response.data
 })
 
+const search = async (filters) => {
+  const response = await axios.get('http://localhost:3001/products' + filters)
+  products.value = response.data
+}
 
 </script>
 

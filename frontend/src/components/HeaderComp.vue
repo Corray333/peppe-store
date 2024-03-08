@@ -18,7 +18,7 @@ import SearchCart from './SearchCart.vue';
 .header-wrapper{
   position: fixed;
   background: linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0, 0, 0, 0) 100%);
-  z-index: 10;
+  z-index: 100;
   width: 100%;
 }
 .header{
@@ -30,6 +30,9 @@ import SearchCart from './SearchCart.vue';
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
+}
+.header img{
+  height: 50px;
 }
 a{
   transition: all 0.3s;
